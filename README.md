@@ -1,2 +1,8 @@
 # VolumeList-Cpp
-IN PROGRESS
+TODO:
+
+-Add fonctional CI
+
+-Add API function and implementation
+
+-Add cmake
