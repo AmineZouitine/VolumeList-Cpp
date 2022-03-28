@@ -1,4 +1,4 @@
-# VolumeList-Cpp [IN PROGRESS | 1%]
+# VolumeList-Cpp [WORK IN PROGRESS | 1%]
 
 
 This project allows to add a notion of volume in contiguous containers in memory. 
