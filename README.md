@@ -1,4 +1,4 @@
-# VolumeList-Cpp [IN PROGRESS| 1%]
+# VolumeList-Cpp [IN PROGRESS | 1%]
 TODO:
 
 -Add fonctional CI
