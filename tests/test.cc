@@ -62,16 +62,42 @@ TEST(VolumeList, multiple_add)
 
 
 
-// TEST(VolumeList, add_out_of_range_NOT_dynamic)
-// {
+TEST(VolumeList, add_out_of_range_NOT_dynamic)
+{
+    auto list = generator(0);
+    auto elem = std::string("Boring guy");
+    try
+    {
+        list.append(elem, 10);
+        // line above should throw an exeption, so this line should never be executed
+        ASSERT_TRUE(false); 
+    }
+    catch(const MaximumVolume& exp)
+    {
+        std::cout << "elem : " << exp.what() << '\n';
+        ASSERT_STREQ("You trying to add a volume of 10 but only 0 is remaining.",
+            exp.what());
+    }
     
-// }
+
+}
 
 
-// TEST(VolumeList, add_out_of_range_dynamic)
-// {
+TEST(VolumeList, add_out_of_range_dynamic)
+{
+    auto list = generator(0, true);
+    auto elem = std::string("Boring guy");
+
+    list.append(elem, 10);
     
-// }
+    ASSERT_EQ(list.get_element_number(), 1);
+    ASSERT_EQ(list[0], "Boring guy");
+
+    auto wrapper = list.get_wrapper_at_index(0);
+    ASSERT_EQ(wrapper.get_max_position(), 10);
+    ASSERT_EQ(wrapper.get_min_position(), 0);
+    ASSERT_EQ(wrapper.get_volume(), 10);
+}
 
 int main(int argc, char* argv[])
 {

@@ -10,5 +10,5 @@ public:
     virtual const char* what() const noexcept;
 
 private:
-    const std::string& msg_;
+    const std::string msg_;
 };
