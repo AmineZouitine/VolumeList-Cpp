@@ -62,3 +62,13 @@ inline T& VolumeList<T>::operator[](size_t index)
             " when the interval is [0, "+ std::to_string(get_element_number()) + "]");
     return elements_[index].get_element();
 }
+
+
+template<typename T>
+VolumeWrapper<T>& VolumeList<T>::get_wrapper_at_index(size_t index)
+{
+    if (index >= get_element_number())
+        throw std::out_of_range("you try to access the index: " + std::to_string(index) +
+                                " when the interval is [0, " + std::to_string(get_element_number()) + "]");
+    return elements_[index];
+}

@@ -16,6 +16,9 @@ public:
     void append(T& element, size_t volume);
 
     T& operator[](size_t index);
+    
+    // Only for testing purpose (deleted in release)
+    VolumeWrapper<T>& get_wrapper_at_index(size_t index);
 
     size_t get_max_volume() const;
     size_t get_current_volume() const;
