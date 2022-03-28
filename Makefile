@@ -1,7 +1,7 @@
 CXX=g++
 CXXFLAGS= -Wall -Wextra -Werror -pedantic -std=c++2a -lpthread
 
-OBJS= $(addprefix src/, volume-list.o)
+OBJS= $(addprefix src/, volume-list.o maximum-volume.o)
 MAIN_OBJ=
 TEST_OBJS= $(addprefix tests/, test.o)
 
