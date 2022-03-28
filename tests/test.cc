@@ -1,12 +1,14 @@
 #include <gtest/gtest.h>
 #include <string>
 #include "../src/volume-list.hh"
+#include "../src/time-wrapper.hh"
 
 
 static VolumeList<std::string> generator(size_t max_volume = 100, bool dynamic = false)
 {
     return VolumeList<std::string>{max_volume, dynamic};
 }
+
 TEST(VolumeList, volume_list_init)
 {
     auto list = generator();
@@ -19,8 +21,9 @@ TEST(VolumeList, volume_list_init)
 TEST(VolumeList, simple_add)
 {
     auto list = generator();
+    auto elem = std::string("Boring guy");
 
-    list.append(std::string("Boring guy"), 10);
+    list.append(elem, 10);
     
     ASSERT_EQ(list.get_current_volume(), 10);
     ASSERT_EQ(list.get_element_number(), 1);
