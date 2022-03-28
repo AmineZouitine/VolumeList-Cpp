@@ -20,13 +20,14 @@ public:
     size_t get_max_volume() const;
     size_t get_current_volume() const;
     size_t get_element_number() const;
+    size_t get_remaining_volume() const;
     bool get_is_dynamic_size();
 
 private:
     size_t max_volume_;
     size_t current_volume_;
-
     bool is_dynamic_size_;
+    size_t remaining_volume_;
 
     std::vector<TimeWrapper<T>> elements_;
 };

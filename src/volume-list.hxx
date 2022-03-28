@@ -5,7 +5,8 @@ template <typename T>
 VolumeList<T>::VolumeList(size_t max_volume, bool is_dynamic_size)
         : max_volume_(max_volume),
           current_volume_(0),
-          is_dynamic_size_(is_dynamic_size)
+          is_dynamic_size_(is_dynamic_size),
+          remaining_volume_(max_volume_)
         {
         }
 
@@ -19,6 +20,12 @@ template <typename T>
 inline size_t VolumeList<T>::get_current_volume() const
 {
     return current_volume_;
+}
+
+template <typename T>
+inline size_t VolumeList<T>::get_remaining_volume() const
+{
+    return max_volume_ - current_volume_;
 }
 
 template <typename T>
@@ -38,7 +45,7 @@ inline void VolumeList<T>::append(T& element, size_t volume)
 {
     if (current_volume_ + volume > max_volume_)
         throw MaximumVolume("You trying to add a volume of " + std::to_string(volume)
-            + "but only " + std::to_string(max_volume_ - current_volume_)+ " is remaining.");
+            + "but only " + std::to_string(remaining_volume_)+ " is remaining.");
 
     auto last_min_position = get_element_number() > 0
         ? elements_.back().get_max_position() : 0; 
