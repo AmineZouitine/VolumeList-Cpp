@@ -18,7 +18,6 @@ public:
     void insert(T& element, size_t min_position, size_t volume);
     void remove(size_t index);
     void update(size_t src_index, size_t dst_index);
-    void update(size_t index, size_t volume);
 
     T& operator[](size_t index);
     
