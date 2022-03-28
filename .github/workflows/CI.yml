@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: gtest
-        uses: make check
+        run: make check
     
