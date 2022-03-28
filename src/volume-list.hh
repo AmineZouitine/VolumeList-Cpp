@@ -2,7 +2,7 @@
 
 #include <cstddef>
 #include <iostream>
-#include "time-wrapper.hh"
+#include "volume-wrapper.hh"
 #include <vector>
 
 template<typename T>
@@ -29,7 +29,7 @@ private:
     bool is_dynamic_size_;
     size_t remaining_volume_;
 
-    std::vector<TimeWrapper<T>> elements_;
+    std::vector<VolumeWrapper<T>> elements_;
 };
 
 template<typename T>

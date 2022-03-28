@@ -50,7 +50,7 @@ inline void VolumeList<T>::append(T& element, size_t volume)
     auto last_min_position = get_element_number() > 0
         ? elements_.back().get_max_position() : 0; 
 
-    elements_.push_back(TimeWrapper<T>(element, last_min_position, volume));
+    elements_.push_back(VolumeWrapper<T>(element, last_min_position, volume));
     current_volume_ += volume;
 }
 
