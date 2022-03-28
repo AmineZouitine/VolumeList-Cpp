@@ -6,6 +6,8 @@ jobs:
   unit_tests:
     name: checking
     runs-on: ubuntu-latest
+    container:
+      image: jjmerelo/raku-test:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
