@@ -1,9 +1,13 @@
 #include <gtest/gtest.h>
+#include <string>
+#include "../src/volume-list.hh"
 
-TEST(CI_Init, init_test)
+TEST(VolumeList, volume_list_init)
 {
-    ASSERT_EQ(1, 1);
-    
+    auto list = VolumeList<std::string>{10, false};
+    ASSERT_EQ(list.get_current_size(), 0);
+    ASSERT_EQ(list.get_max_size(), 10);
+    ASSERT_FALSE(list.get_is_dynamic_size());
 }
 
 int main(int argc, char* argv[])
