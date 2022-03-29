@@ -1,5 +1,4 @@
 #include "volume-wrapper.hh"
- 
 
 template<typename T>
 VolumeWrapper<T>::VolumeWrapper(std::shared_ptr<T> element, size_t min_position, size_t volume)

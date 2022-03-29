@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS= -Wall -Wextra -Werror -pedantic -std=c++2a -lpthread
+CXXFLAGS= -Wall -Wextra -Werror -pedantic -std=c++2a -lpthread -g
 
 OBJS= $(addprefix src/, maximum-volume.o)
 MAIN_OBJ=

@@ -40,6 +40,12 @@ inline bool VolumeList<T>::get_is_dynamic_size()
 }
 
 template <typename T>
+const std::vector<VolumeWrapper<T>>& VolumeList<T>::get_volume_list() const
+{
+    return elements_;
+}
+
+template <typename T>
 inline void VolumeList<T>::resize(size_t volume)
 {
     if (current_volume_ + volume > max_volume_)
@@ -98,12 +104,15 @@ inline void VolumeList<T>::sort()
 template<typename T>
 inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 {
-    for (auto& elem : elements_)
-    {
-        if (elem.is_overlaping(element))
-            elem.set_min_position(element.get_max_position());
-    }
     elements_.push_back(element);
+    for (size_t i = 0; i < elements_.size() - 1; i++)
+    {
+        if (elements_[i].is_overlaping(element))
+        {
+            elements_[i].set_min_position(element.get_max_position());
+            element = elements_[i];
+        }
+    }
     sort();
 }
 
