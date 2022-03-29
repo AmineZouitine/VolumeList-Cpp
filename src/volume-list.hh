@@ -30,14 +30,9 @@ public:
     bool get_is_dynamic_size();
 
 private:
-    void sort()
-    {
-        std::sort(elements_.begin(), elements_.end(),
-            [](const VolumeWrapper<T>& lhs, const VolumeWrapper<T>& rhs)
-            {
-                return lhs.get_min_position() < rhs.get_min_position();
-            });
-    }
+    void sort();
+    void elements_shift(VolumeWrapper<T>& element);
+    void resize(size_t volume);
 
 private:
     size_t max_volume_;

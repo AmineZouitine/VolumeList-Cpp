@@ -1,9 +1,9 @@
 CXX=g++
 CXXFLAGS= -Wall -Wextra -Werror -pedantic -std=c++2a -lpthread
 
-OBJS= $(addprefix src/, volume-list.o maximum-volume.o)
+OBJS= $(addprefix src/, maximum-volume.o)
 MAIN_OBJ=
-TEST_OBJS= $(addprefix tests/, append-test.o)
+TEST_OBJS= $(addprefix tests/, main-test.o)
 
 main: ${OBJS} ${MAIN_OBJ}
 	${CXX} -o $@ $^

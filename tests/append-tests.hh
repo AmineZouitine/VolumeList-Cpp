@@ -1,21 +1,11 @@
+#pragma once
+
 #include <gtest/gtest.h>
 #include <string>
 #include "../src/volume-list.hh"
+#include "utils_tests.hh"
 
 
-static VolumeList<std::string> generator(size_t max_volume = 100, bool dynamic = false)
-{
-    return VolumeList<std::string>{max_volume, dynamic};
-}
-
-TEST(VolumeList, volume_list_init)
-{
-    auto list = generator();
-    ASSERT_EQ(list.get_max_volume(), 100);
-    ASSERT_EQ(list.get_current_volume(), 0);
-    ASSERT_EQ(list.get_element_number(), 0);
-    ASSERT_FALSE(list.get_is_dynamic_size());
-}
 
 TEST(VolumeList, simple_add)
 {
@@ -96,11 +86,4 @@ TEST(VolumeList, add_out_of_range_dynamic)
     ASSERT_EQ(wrapper.get_max_position(), 10);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
-}
-
-int main(int argc, char* argv[])
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-
 }

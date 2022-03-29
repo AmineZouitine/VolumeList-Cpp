@@ -12,6 +12,9 @@ public:
     size_t get_max_position() const;
     size_t get_volume() const;
 
+    void set_min_position(size_t new_min_position);
+    bool operator==(const VolumeWrapper<T>& rhs);
+
 private:
     T& element_;
     size_t min_position_;

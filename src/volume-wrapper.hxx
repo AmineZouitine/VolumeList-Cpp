@@ -33,3 +33,14 @@ inline size_t VolumeWrapper<T>::get_volume() const
     return volume_;
 }
 
+template<typename T>
+bool VolumeWrapper<T>::operator==(const VolumeWrapper<T>& rhs)
+{
+    return min_position_ == rhs.get_min_position();
+}
+
+template<typename T>
+void VolumeWrapper<T>::set_min_position(size_t new_min_position)
+{
+   min_position_ = new_min_position;
+}
