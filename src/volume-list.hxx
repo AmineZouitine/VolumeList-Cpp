@@ -96,13 +96,12 @@ inline T& VolumeList<T>::operator[](size_t index)
     return elements_[index].get_element();
 }
 
-
 template<typename T>
 inline VolumeWrapper<T>& VolumeList<T>::get_volume_at(size_t index)
 {
     if (index >= get_element_number())
         throw std::out_of_range("you try to access the index: " + std::to_string(index) +
-                                " when the interval is [0, " + std::to_string(get_element_number()) + "]");
+                                " when the interval is [0, " + std::to_string(elements_.size() == 0 ? 0 : elements_.size() - 1) + "]");
     return elements_[index];
 }
 
@@ -139,4 +138,17 @@ inline void VolumeList<T>::insert(T& element, size_t min_position, size_t volume
     auto new_elem = VolumeWrapper<T>(std::make_shared<T>(element), min_position, volume);
     elements_shift(new_elem);
     current_volume_ += volume;
+}
+
+template<typename T>
+void VolumeList<T>::remove(size_t index)
+{
+    if (index >= elements_.size())
+        throw std::out_of_range("Your index: " + std::to_string(index)
+            + " but interval is [0, " + 
+            std::to_string(elements_.size() == 0 ? 0 : elements_.size() - 1) + "].");
+
+
+    current_volume_ -= elements_[index].get_volume();
+    elements_.erase(elements_.begin() + index);
 }
