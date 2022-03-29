@@ -111,3 +111,38 @@ TEST(insert, multiple_insert_overlaping_hard)
     ASSERT_EQ(wrapper4.get_min_position(), 21);
     ASSERT_EQ(wrapper4.get_volume(), 50);
 }
+
+
+TEST(append, insert_out_of_range_NOT_dynamic)
+{
+    auto list = generator(0);
+    auto elem = std::string("Boring guy");
+    try
+    {
+        list.insert(elem, 0, 10);
+        // line above should throw an exeption, so this line should never be executed
+        ASSERT_TRUE(false); 
+    }
+    catch(const MaximumVolume& exp)
+    {
+        ASSERT_STREQ("You trying to add a volume of 10 but only 0 is remaining.",
+            exp.what());
+    }
+}
+
+
+TEST(append, insert_out_of_range_dynamic)
+{
+    auto list = generator(0, true);
+    auto elem = std::string("Boring guy");
+    list.insert(elem, 0, 10);
+
+    ASSERT_EQ(list.get_current_volume(), 10);
+    ASSERT_EQ(list.get_element_number(), 1);
+    ASSERT_EQ(list[0], "Boring guy");
+
+    auto wrapper = list.get_volume_at(0);
+    ASSERT_EQ(wrapper.get_max_position(), 10);
+    ASSERT_EQ(wrapper.get_min_position(), 0);
+    ASSERT_EQ(wrapper.get_volume(), 10);
+}

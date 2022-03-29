@@ -13,7 +13,6 @@ public:
     ~VolumeList() = default;
 
     void append(T& element, size_t volume);
-    void insert(T& element, size_t index);
     void insert(T& element, size_t min_position, size_t volume);
     void remove(size_t index);
     void update(size_t src_index, size_t dst_index);
@@ -31,7 +30,8 @@ public:
 private:
     void sort();
     void elements_shift(VolumeWrapper<T>& element);
-    void resize(size_t volume);
+    void check_resize(size_t volume);
+    void check_out_of_range(size_t min_position);
 
 private:
     size_t max_volume_;

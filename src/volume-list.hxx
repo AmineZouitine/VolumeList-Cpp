@@ -46,7 +46,7 @@ const std::vector<VolumeWrapper<T>>& VolumeList<T>::get_volume_list() const
 }
 
 template <typename T>
-inline void VolumeList<T>::resize(size_t volume)
+inline void VolumeList<T>::check_resize(size_t volume)
 {
     if (current_volume_ + volume > max_volume_)
     {
@@ -60,10 +60,25 @@ inline void VolumeList<T>::resize(size_t volume)
 
 }
 
+template <typename T>
+inline void VolumeList<T>::check_out_of_range(size_t min_position)
+{
+    if (min_position > get_max_volume())
+    {
+        if (is_dynamic_size_)
+            max_volume_ += min_position;
+        else
+            throw std::out_of_range("You trying to add a elem with a min position of "
+                + std::to_string(min_position) + 
+                " but only [0, " + std::to_string(get_max_volume()) + "] is posible.");
+
+    }
+}
+
 template<typename T>
 inline void VolumeList<T>::append(T& element, size_t volume)
 {
-    resize(volume);
+    check_resize(volume);
 
     auto last_min_position = get_element_number() > 0
         ? elements_.back().get_max_position() : 0; 
@@ -119,7 +134,8 @@ inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 template<typename T>
 inline void VolumeList<T>::insert(T& element, size_t min_position, size_t volume)
 {
-    resize(volume);
+    check_out_of_range(min_position);
+    check_resize(volume);
     auto new_elem = VolumeWrapper<T>(std::make_shared<T>(element), min_position, volume);
     elements_shift(new_elem);
     current_volume_ += volume;
