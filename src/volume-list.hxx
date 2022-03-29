@@ -62,7 +62,7 @@ inline void VolumeList<T>::append(T& element, size_t volume)
     auto last_min_position = get_element_number() > 0
         ? elements_.back().get_max_position() : 0; 
 
-    elements_.push_back(VolumeWrapper<T>(element, last_min_position, volume));
+    elements_.push_back(VolumeWrapper<T>(std::make_shared<T>(element), last_min_position, volume));
     current_volume_ += volume;
 }
 
@@ -100,16 +100,18 @@ inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 {
     for (auto& elem : elements_)
     {
-        if (elem == element)
+        if (elem.is_overlaping(element))
             elem.set_min_position(element.get_max_position());
     }
-    // sort();
+    elements_.push_back(element);
+    sort();
 }
 
 template<typename T>
 inline void VolumeList<T>::insert(T& element, size_t min_position, size_t volume)
 {
     resize(volume);
-    auto new_elem = VolumeWrapper<T>(element, min_position, volume);
+    auto new_elem = VolumeWrapper<T>(std::make_shared<T>(element), min_position, volume);
     elements_shift(new_elem);
+    current_volume_ += volume;
 }
