@@ -9,8 +9,6 @@ The project is under development, it is not yet usable (but it will be soon)
 
 TODO:
 
--Add fonctional CI
-
 -Add API functions and implementation
 
 -Add cmake
