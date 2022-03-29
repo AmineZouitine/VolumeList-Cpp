@@ -3,6 +3,7 @@
 #include "init-tests.hh"
 #include "append-tests.hh"
 #include "insert-tests.hh"
+#include "remove-tests.hh"
 
 
 int main(int argc, char* argv[])
