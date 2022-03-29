@@ -28,7 +28,7 @@ TEST(VolumeList, simple_add)
     ASSERT_EQ(list.get_element_number(), 1);
     ASSERT_EQ(list[0], "Boring guy");
 
-    auto wrapper = list.get_wrapper_at_index(0);
+    auto wrapper = list.get_volume_at(0);
     ASSERT_EQ(wrapper.get_max_position(), 10);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
@@ -48,12 +48,12 @@ TEST(VolumeList, multiple_add)
     ASSERT_EQ(list[0], "Boring guy");
     ASSERT_EQ(list[1], "PyBrook");
 
-    auto wrapper = list.get_wrapper_at_index(0);
+    auto wrapper = list.get_volume_at(0);
     ASSERT_EQ(wrapper.get_max_position(), 10);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
 
-    auto wrapper2 = list.get_wrapper_at_index(1);
+    auto wrapper2 = list.get_volume_at(1);
     ASSERT_EQ(wrapper2.get_max_position(), 15);
     ASSERT_EQ(wrapper2.get_min_position(), 10);
     ASSERT_EQ(wrapper2.get_volume(), 5);
@@ -92,7 +92,7 @@ TEST(VolumeList, add_out_of_range_dynamic)
     ASSERT_EQ(list.get_element_number(), 1);
     ASSERT_EQ(list[0], "Boring guy");
 
-    auto wrapper = list.get_wrapper_at_index(0);
+    auto wrapper = list.get_volume_at(0);
     ASSERT_EQ(wrapper.get_max_position(), 10);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);

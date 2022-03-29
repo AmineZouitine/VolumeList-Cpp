@@ -20,15 +20,24 @@ public:
     void update(size_t src_index, size_t dst_index);
 
     T& operator[](size_t index);
-    
-    // Only for testing purpose (deleted in release)
-    VolumeWrapper<T>& get_wrapper_at_index(size_t index);
+
+    VolumeWrapper<T>& get_volume_at(size_t index);
 
     size_t get_max_volume() const;
     size_t get_current_volume() const;
     size_t get_element_number() const;
     size_t get_remaining_volume() const;
     bool get_is_dynamic_size();
+
+private:
+    void sort()
+    {
+        std::sort(elements_.begin(), elements_.end(),
+            [](const VolumeWrapper<T>& lhs, const VolumeWrapper<T>& rhs)
+            {
+                return lhs.get_min_position() < rhs.get_min_position();
+            });
+    }
 
 private:
     size_t max_volume_;

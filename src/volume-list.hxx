@@ -7,8 +7,7 @@ VolumeList<T>::VolumeList(size_t max_volume, bool is_dynamic_size)
           current_volume_(0),
           is_dynamic_size_(is_dynamic_size),
           remaining_volume_(max_volume_)
-        {
-        }
+{}
 
 template <typename T>
 inline size_t VolumeList<T>::get_max_volume() const
@@ -49,7 +48,7 @@ inline void VolumeList<T>::append(T& element, size_t volume)
             max_volume_ += volume + (max_volume_ * 2);
         else
             throw MaximumVolume("You trying to add a volume of " + std::to_string(volume) + 
-                " but only " + std::to_string(remaining_volume_) + " is remaining.");
+                " but only " + std::to_string(get_remaining_volume()) + " is remaining.");
     }
 
     auto last_min_position = get_element_number() > 0
@@ -70,10 +69,17 @@ inline T& VolumeList<T>::operator[](size_t index)
 
 
 template<typename T>
-VolumeWrapper<T>& VolumeList<T>::get_wrapper_at_index(size_t index)
+VolumeWrapper<T>& VolumeList<T>::get_volume_at(size_t index)
 {
     if (index >= get_element_number())
         throw std::out_of_range("you try to access the index: " + std::to_string(index) +
                                 " when the interval is [0, " + std::to_string(get_element_number()) + "]");
     return elements_[index];
+}
+
+
+template<typename T>
+void VolumeList<T>::insert(T& element, size_t min_position, size_t volume)
+{
+    
 }
