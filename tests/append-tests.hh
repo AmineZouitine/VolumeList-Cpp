@@ -7,7 +7,7 @@
 
 
 
-TEST(VolumeList, simple_add)
+TEST(append, simple_add)
 {
     auto list = generator();
     auto elem = std::string("Boring guy");
@@ -24,7 +24,7 @@ TEST(VolumeList, simple_add)
     ASSERT_EQ(wrapper.get_volume(), 10);
 }
 
-TEST(VolumeList, multiple_add)
+TEST(append, multiple_add)
 {
     auto list = generator();
     auto elem = std::string("Boring guy");
@@ -52,7 +52,7 @@ TEST(VolumeList, multiple_add)
 
 
 
-TEST(VolumeList, add_out_of_range_NOT_dynamic)
+TEST(append, add_out_of_range_NOT_dynamic)
 {
     auto list = generator(0);
     auto elem = std::string("Boring guy");
@@ -72,7 +72,7 @@ TEST(VolumeList, add_out_of_range_NOT_dynamic)
 }
 
 
-TEST(VolumeList, add_out_of_range_dynamic)
+TEST(append, add_out_of_range_dynamic)
 {
     auto list = generator(0, true);
     auto elem = std::string("Boring guy");

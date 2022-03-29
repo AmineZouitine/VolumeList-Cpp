@@ -100,15 +100,16 @@ inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 {
     for (auto& elem : elements_)
     {
-        if (elem == elements_)
+        if (elem == element)
             elem.set_min_position(element.get_max_position());
     }
-    sort();
+    // sort();
 }
 
 template<typename T>
 inline void VolumeList<T>::insert(T& element, size_t min_position, size_t volume)
 {
     resize(volume);
-    elements_shift();
+    auto new_elem = VolumeWrapper<T>(element, min_position, volume);
+    elements_shift(new_elem);
 }

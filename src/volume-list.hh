@@ -20,7 +20,6 @@ public:
     void update(size_t src_index, size_t dst_index);
 
     T& operator[](size_t index);
-
     VolumeWrapper<T>& get_volume_at(size_t index);
 
     size_t get_max_volume() const;

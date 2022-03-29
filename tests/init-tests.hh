@@ -5,7 +5,7 @@
 #include "../src/volume-list.hh"
 #include "utils_tests.hh"
 
-TEST(VolumeList, volume_list_init)
+TEST(init, volume_list_init)
 {
     auto list = generator();
     ASSERT_EQ(list.get_max_volume(), 100);
