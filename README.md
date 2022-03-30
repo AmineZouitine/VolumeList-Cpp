@@ -16,7 +16,7 @@ void remove(size_t index);
 
 ### Creation
 
-Creation of a **VolumeList** of type string, with a maximum volume of <span style="color:orange;">Word up</span>**100**<\span>` units and a **non dynamics size**.
+Creation of a **VolumeList** of type string, with a maximum volume of <span style="color:orange;">Word up</span>**100**</span>` units and a **non dynamics size**.
 
 ```cc
 auto volume_list = VolumeList<std::string>{100};  // type can be anything.
