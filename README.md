@@ -25,7 +25,6 @@ void remove(size_t index);
 <p>
   <img src="https://user-images.githubusercontent.com/53370597/160877316-bbba1936-3a2e-4535-99af-57e182ce8208.png">
 </p>
-
 Creation of a **VolumeList** of type string, with a maximum volume of **100** units and a **non dynamics size**.
 
 ```cc
