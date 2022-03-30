@@ -109,7 +109,7 @@ auto elem1 = std::string("Bye you :c");
 auto elem2 = std::string("Hi there !");
     
 volume_list.append(elem1, 10);
-volune_list.append(elem2, 20);
+volune_list.append(elem2, 10);
 volume_list.remove(0);
 ```
 
@@ -117,8 +117,8 @@ volume_list.remove(0);
 ```
 -------[0]-------
 Element: Hi there !
-Position: [9, 30]
-Volume: 20
+Position: [9, 19]
+Volume: 10
 ```
 
 ### Methods that may be useful to you 🌟
