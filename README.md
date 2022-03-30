@@ -9,7 +9,7 @@ An interesting example of use would be a timetable application.
 
 ## Usage 📜
 
-### Useful methods ⭐
+### Essential methods ⭐
 ```cc
 VolumeList(size_t max_volume, bool is_dynamic_size = false); // Constructor
 void append(T& element, size_t volume);
