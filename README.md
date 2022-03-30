@@ -141,6 +141,15 @@ std::vector<VolumeWrapper<T>>::iterator begin();
 std::vector<VolumeWrapper<T>>::const_iterator end() const;
 std::vector<VolumeWrapper<T>>::iterator end();
 ```
+## Essential Methods -- VolumeWrapper ⭐
+
+```cc
+VolumeWrapper(std::shared_ptr<T> element, size_t min_position, size_t volume);
+T& get_element() const;
+size_t get_min_position() const;
+size_t get_max_position() const;
+size_t get_volume() const;
+```
 
 ## Compatibility with STL functions -- WORK IN PROGRESS 👨‍💻
 ## Code documentation -- WORK IN PROGRESS 👨‍💻
