@@ -61,6 +61,7 @@ Volume: 20
 
 ### Insert
 ![Webp net-gifmaker](https://user-images.githubusercontent.com/53370597/160888183-ae9e7842-086b-43d1-9a8c-6906d3d13a54.gif)
+
 The **insert** method takes the **element** to insert, its **volume**, and the place where it **starts** in the volume list.
 If there is already an element at this position, it is **shifted**.
 
@@ -98,6 +99,8 @@ Volume: 10
 ```
 
 ### Remove
+![Webp net-gifmaker (1)](https://user-images.githubusercontent.com/53370597/160889767-08bfc2a5-6bf2-440b-975c-d0b7ae9cc85d.gif)
+
 The **remove** function allows to remove an element from the list with its **index**, **it works like a classic remove**.
 
 ***Exemple***
