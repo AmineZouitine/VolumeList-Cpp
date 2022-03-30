@@ -22,7 +22,7 @@ void remove(size_t index);
 ```
 
 ### Creation
-<p align="center">
+<p>
   <img src="https://user-images.githubusercontent.com/53370597/160877316-bbba1936-3a2e-4535-99af-57e182ce8208.png">
 </p>
 
