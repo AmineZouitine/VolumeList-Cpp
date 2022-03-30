@@ -152,3 +152,20 @@ void VolumeList<T>::remove(size_t index)
     current_volume_ -= elements_[index].get_volume();
     elements_.erase(elements_.begin() + index);
 }
+
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const VolumeList<T>& volume_list)
+{
+    auto list = volume_list.get_volume_list();
+    for (size_t i = 0; i < volume_list.get_element_number(); i++)
+    {
+        os << "-------[" << i << "]-------\n";
+        os << "Element: " << list[i].get_element() << '\n';
+        os << "Position: [" << list[i].get_min_position()
+            << ", " << list[i].get_max_position() << "]\n";
+        os << "Volume: " << list[i].get_volume() << '\n';
+        
+    }
+    return os;
+}

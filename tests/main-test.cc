@@ -4,6 +4,7 @@
 #include "append-tests.hh"
 #include "insert-tests.hh"
 #include "remove-tests.hh"
+#include "cout-tests.hh"
 
 
 int main(int argc, char* argv[])
