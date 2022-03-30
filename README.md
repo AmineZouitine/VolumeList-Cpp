@@ -112,6 +112,7 @@ auto elem2 = std::string("Hi there !");
     
 volume_list.append(elem1, 10);
 volune_list.append(elem2, 10);
+
 volume_list.remove(0);
 ```
 
