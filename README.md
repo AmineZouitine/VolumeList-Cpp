@@ -7,7 +7,7 @@ An interesting example of use would be a timetable application.
 ## Installation -- WORK IN PROGRESS 👨‍💻
 
 
-## Usage 📔
+## Usage 📜
 
 ### Useful methods
 ```cc
