@@ -117,7 +117,7 @@ volume_list.remove(0);
 ```
 -------[0]-------
 Element: Hi there !
-Position: [10, 30]
+Position: [9, 30]
 Volume: 20
 ```
 
