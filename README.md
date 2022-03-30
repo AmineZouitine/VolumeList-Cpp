@@ -25,6 +25,8 @@ auto volume_list = VolumeList<std::string>{100};  // type can be anything.
 ### Append
 The **append** method takes the **element** to be added at the **end** of the list and its **volume**.
 Here we add a string with a volume of **10** to our list and a string with a volume of **20**.
+
+**Exemple**
 ```cc
 auto elem1 = std::string("Hi there!");
 auto elem2 = std::string("I hope you enjoy it");
@@ -46,3 +48,40 @@ Volume: 20
 ```
 
 ### Insert
+The **insert** method takes the **element** to insert, its **volume**, and the place where it **starts** in the volume list.
+If there is already an element at this position, it is **shifted**.
+
+**Exemple**
+```cc
+auto elem1 = std::string("First");
+auto elem2 = std::string("Second");
+auto elem3 = std::string("Third");
+auto elem4 = std::string("Fourth");
+
+volune_list.insert(elem, 0, 50);
+volume_list.insert(elem2, 2, 7);
+volume_list.insert(elem3, 2, 9);
+volune_list.insert(elem4, 0, 5);
+```
+
+**List status** *(std::cout << volume_list)*:
+```
+-------[0]-------
+Element: Fourth
+Position: [0, 5]
+Volume: 5
+-------[1]-------
+Element: Third
+Position: [5, 14]
+Volume: 9
+-------[2]-------
+Element: Second
+Position: [14, 21]
+Volume: 7
+-------[3]-------
+Element: First
+Position: [21, 71]
+Volume: 50
+```
+
+#Remove
