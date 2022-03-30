@@ -16,7 +16,7 @@ void remove(size_t index);
 
 ### Creation
 
-Creation of a VolumeList of type string, with a maximum volume of 100 units and a not dynamics size.
+Creation of a VolumeList of type string, with a maximum volume of 100 units and a non dynamics size.
 
 ```cc
 auto volume_list = VolumeList<std::string>{100};  // type can be anything.
