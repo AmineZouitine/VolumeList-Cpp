@@ -126,3 +126,5 @@ std::vector<VolumeWrapper<T>>::iterator begin();
 std::vector<VolumeWrapper<T>>::const_iterator end() const;
 std::vector<VolumeWrapper<T>>::iterator end();
 ```
+
+## Compatibility with STL functions -- WORK IN PROGRESS 👨‍💻
