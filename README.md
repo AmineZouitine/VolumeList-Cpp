@@ -51,11 +51,11 @@ volume_list.append(elem2, 20);
 ```
 -------[0]-------
 Element: Hi there!
-Position: [0, 10]
+Position: [0, 9]
 Volume: 10
 -------[1]-------
 Element: I hope you enjoy it
-Position: [10, 30]
+Position: [9, 29]
 Volume: 20
 ```
 
