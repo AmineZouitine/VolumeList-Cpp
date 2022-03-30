@@ -1,7 +1,7 @@
 # 🗄 VolumeList-Cpp 🗄
 
 <p align="center">
-  ![diagram-20220330 (3)](https://user-images.githubusercontent.com/53370597/160875178-bfe364e0-2aa9-42e6-950d-c69c6b6ddc5f.png)
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/53370597/160875178-bfe364e0-2aa9-42e6-950d-c69c6b6ddc5f.png">
 </p>
 
 
