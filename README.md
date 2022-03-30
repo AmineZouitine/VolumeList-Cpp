@@ -33,9 +33,8 @@ auto volume_list = VolumeList<std::string>{100};  // type can be anything.
 
 ### Append
 <p>
-  <img src="https://user-images.githubusercontent.com/53370597/160878965-1b578a5c-3ba0-4bd5-ba7f-be69105b14f6.png">
+  <img src="https://user-images.githubusercontent.com/53370597/160879926-d8811b5e-80dd-48e2-8a82-02754987667e.png">
 </p>
-
 The **append** method takes the **element** to be added at the **end** of the list and its **volume**.
 Here we add a string with a volume of **10** to our list and a string with a volume of **20**.
 
