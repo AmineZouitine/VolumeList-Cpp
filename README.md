@@ -26,20 +26,21 @@ auto volume_list = VolumeList<std::string>{100};  // type can be anything.
 The append method takes the element to be added at the end of the list and its volume.
 Here we add a string with a volume of 10 to our list and a string with a volume of 20.
 ```cc
-auto elem = std::string("Hi there!");
-volume_list.append(elem, 10);
-volume_list.append(elem, 20);
+auto elem1 = std::string("Hi there!");
+auto elem2 = std::string("I hope you enjoy it");
+volume_list.append(elem1, 10);
+volume_list.append(elem2, 20);
 ```
 
 List status (std::cout << volume_list):
 
 ```
 -------[0]-------
-Element: Boring guy
+Element: Hi there!
 Position: [0, 10]
 Volume: 10
 -------[1]-------
-Element: Boring guy
+Element: I hope you enjoy it
 Position: [10, 30]
 Volume: 20
 ```
