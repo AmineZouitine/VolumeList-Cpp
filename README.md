@@ -108,7 +108,7 @@ Position: [10, 30]
 Volume: 20
 ```
 
-### Methods that may be useful to you
+### Methods that may be useful to you 🌟
 
 ```cc
 T& operator[](size_t index);
