@@ -1,8 +1,10 @@
 # 🗄 VolumeList-Cpp 🗄
 
-<div style="text-align:center">
+<p align="center">
+  
   ![diagram-20220330 (3)](https://user-images.githubusercontent.com/53370597/160875178-bfe364e0-2aa9-42e6-950d-c69c6b6ddc5f.png)
-</div>
+  
+</p>
 
 
 This project allows to add a notion of **volume** in contiguous containers in memory. 
