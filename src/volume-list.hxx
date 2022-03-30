@@ -1,6 +1,7 @@
 #include "volume-list.hh"
 #include "maximum-volume.hh"
 
+
 template <typename T>
 VolumeList<T>::VolumeList(size_t max_volume, bool is_dynamic_size)
         : max_volume_(max_volume),
@@ -153,6 +154,30 @@ void VolumeList<T>::remove(size_t index)
     elements_.erase(elements_.begin() + index);
 }
 
+template<typename T>
+std::vector<VolumeWrapper<T>>::const_iterator VolumeList<T>::begin() const
+{
+    return elements_.cbegin();
+}
+
+template<typename T>
+std::vector<VolumeWrapper<T>>::iterator VolumeList<T>::begin()
+{
+    return elements_.begin();
+}
+
+
+template<typename T>
+inline std::vector<VolumeWrapper<T>>::const_iterator VolumeList<T>::end() const
+{
+    return elements_.cend();
+}
+
+template<typename T>
+inline std::vector<VolumeWrapper<T>>::iterator VolumeList<T>::end()
+{
+    return elements_.end();
+}
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const VolumeList<T>& volume_list)

@@ -2,13 +2,15 @@
 
 #include <cstddef>
 #include <iostream>
-#include "volume-wrapper.hh"
 #include <vector>
+
+#include "volume-wrapper.hh"
 
 template<typename T>
 class VolumeList
 {
 public:
+
     VolumeList(size_t max_volume, bool is_dynamic_size = false);
     ~VolumeList() = default;
 
@@ -25,6 +27,12 @@ public:
     size_t get_remaining_volume() const;
     bool get_is_dynamic_size();
     const std::vector<VolumeWrapper<T>>& get_volume_list() const;
+
+
+    std::vector<VolumeWrapper<T>>::const_iterator begin() const;
+    std::vector<VolumeWrapper<T>>::iterator begin();
+    std::vector<VolumeWrapper<T>>::const_iterator end() const;
+    std::vector<VolumeWrapper<T>>::iterator end();
 
 
 private:
