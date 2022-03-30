@@ -41,12 +41,6 @@ inline bool VolumeList<T>::get_is_dynamic_size()
 }
 
 template <typename T>
-const std::vector<VolumeWrapper<T>>& VolumeList<T>::get_volume_list() const
-{
-    return elements_;
-}
-
-template <typename T>
 inline void VolumeList<T>::check_resize(size_t volume)
 {
     if (current_volume_ + volume > max_volume_)
@@ -180,17 +174,12 @@ inline std::vector<VolumeWrapper<T>>::iterator VolumeList<T>::end()
 }
 
 template<typename T>
-std::ostream& operator<<(std::ostream& os, const VolumeList<T>& volume_list)
+std::ostream& operator<<(std::ostream& os, VolumeList<T>& volume_list)
 {
-    auto list = volume_list.get_volume_list();
     for (size_t i = 0; i < volume_list.get_element_number(); i++)
     {
         os << "-------[" << i << "]-------\n";
-        os << "Element: " << list[i].get_element() << '\n';
-        os << "Position: [" << list[i].get_min_position()
-            << ", " << list[i].get_max_position() << "]\n";
-        os << "Volume: " << list[i].get_volume() << '\n';
-        
+        os << volume_list.get_volume_at(i);
     }
     return os;
 }

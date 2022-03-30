@@ -19,7 +19,7 @@ TEST(append, simple_add)
     ASSERT_EQ(list[0], "Boring guy");
 
     auto wrapper = list.get_volume_at(0);
-    ASSERT_EQ(wrapper.get_max_position(), 10);
+    ASSERT_EQ(wrapper.get_max_position(), 9);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
 }
@@ -39,13 +39,13 @@ TEST(append, multiple_add)
     ASSERT_EQ(list[1], "PyBrook");
 
     auto wrapper = list.get_volume_at(0);
-    ASSERT_EQ(wrapper.get_max_position(), 10);
+    ASSERT_EQ(wrapper.get_max_position(), 9);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
 
     auto wrapper2 = list.get_volume_at(1);
-    ASSERT_EQ(wrapper2.get_max_position(), 15);
-    ASSERT_EQ(wrapper2.get_min_position(), 10);
+    ASSERT_EQ(wrapper2.get_max_position(), 14);
+    ASSERT_EQ(wrapper2.get_min_position(), 9);
     ASSERT_EQ(wrapper2.get_volume(), 5);
 
 }
@@ -83,7 +83,7 @@ TEST(append, add_out_of_range_dynamic)
     ASSERT_EQ(list[0], "Boring guy");
 
     auto wrapper = list.get_volume_at(0);
-    ASSERT_EQ(wrapper.get_max_position(), 10);
+    ASSERT_EQ(wrapper.get_max_position(), 9);
     ASSERT_EQ(wrapper.get_min_position(), 0);
     ASSERT_EQ(wrapper.get_volume(), 10);
 }

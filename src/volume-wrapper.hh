@@ -1,6 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <memory>
+#include <iostream>
 
 template<typename T>
 class VolumeWrapper
@@ -24,4 +25,8 @@ private:
     size_t volume_;
     size_t max_position_;
 };
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, VolumeWrapper<T>& wrapper);
+
 #include "volume-wrapper.hxx"

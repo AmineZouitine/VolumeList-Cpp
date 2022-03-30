@@ -35,14 +35,14 @@ TEST(cout, cout_multiple)
     ASSERT_EQ(out,
               "-------[0]-------\n"
               "Element: Boring guy\n"
-              "Position: [0, 10]\n"
+              "Position: [0, 9]\n"
               "Volume: 10\n"
               "-------[1]-------\n"
               "Element: PyBrook\n"
-              "Position: [10, 20]\n"
+              "Position: [9, 19]\n"
               "Volume: 10\n"
               "-------[2]-------\n"
               "Element: RL_Shooter\n"
-              "Position: [20, 30]\n"
+              "Position: [19, 29]\n"
               "Volume: 10\n");
 }
