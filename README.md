@@ -60,6 +60,7 @@ Volume: 20
 ```
 
 ### Insert
+![Webp net-gifmaker](https://user-images.githubusercontent.com/53370597/160888183-ae9e7842-086b-43d1-9a8c-6906d3d13a54.gif)
 The **insert** method takes the **element** to insert, its **volume**, and the place where it **starts** in the volume list.
 If there is already an element at this position, it is **shifted**.
 
