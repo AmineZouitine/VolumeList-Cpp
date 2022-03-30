@@ -70,7 +70,7 @@ auto elem2 = std::string("Second");
 auto elem3 = std::string("Third");
 auto elem4 = std::string("Fourth");
 
-volune_list.insert(elem1, 0, 50);
+volune_list.insert(elem1, 0, 10);
 volume_list.insert(elem2, 2, 7);
 volume_list.insert(elem3, 2, 9);
 volune_list.insert(elem4, 0, 5);
@@ -80,20 +80,20 @@ volune_list.insert(elem4, 0, 5);
 ```
 -------[0]-------
 Element: Fourth
-Position: [0, 5]
+Position: [0, 4]
 Volume: 5
 -------[1]-------
 Element: Third
-Position: [5, 14]
+Position: [4, 13]
 Volume: 9
 -------[2]-------
 Element: Second
-Position: [14, 21]
+Position: [13, 20]
 Volume: 7
 -------[3]-------
 Element: First
-Position: [21, 71]
-Volume: 50
+Position: [20, 30]
+Volume: 10
 ```
 
 ### Remove
