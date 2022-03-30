@@ -1,7 +1,7 @@
 # 🗄 VolumeList-Cpp 🗄 -- WORK IN PROGRESS 👨‍💻
 
 
-This project allows to add a notion of volume in contiguous containers in memory. 
+This project allows to add a notion of **volume** in contiguous containers in memory. 
 An interesting example of use would be a timetable application.
 
 ## Usage
@@ -16,7 +16,7 @@ void remove(size_t index);
 
 ### Creation
 
-Creation of a VolumeList of type string, with a maximum volume of 100 units and a non dynamics size.
+Creation of a **VolumeList** of type string, with a maximum volume of ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `**100**` units and a **non dynamics size**.
 
 ```cc
 auto volume_list = VolumeList<std::string>{100};  // type can be anything.
