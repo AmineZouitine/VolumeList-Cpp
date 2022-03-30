@@ -134,7 +134,7 @@ size_t get_max_volume() const;
 size_t get_current_volume() const;
 size_t get_element_number() const;
 size_t get_remaining_volume() const;
-bool get_is_dynamic_size();
+bool get_is_dynamic_size() const;
 const std::vector<VolumeWrapper<T>>& get_volume_list() const;
 
 std::vector<VolumeWrapper<T>>::const_iterator begin() const;
