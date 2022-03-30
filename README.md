@@ -128,4 +128,4 @@ std::vector<VolumeWrapper<T>>::iterator end();
 ```
 
 ## Compatibility with STL functions -- WORK IN PROGRESS 👨‍💻
-## Code documentation -- -- WORK IN PROGRESS 👨‍💻
+## Code documentation -- WORK IN PROGRESS 👨‍💻
