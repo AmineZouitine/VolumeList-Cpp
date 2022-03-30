@@ -58,7 +58,7 @@ auto elem2 = std::string("Second");
 auto elem3 = std::string("Third");
 auto elem4 = std::string("Fourth");
 
-volune_list.insert(elem, 0, 50);
+volune_list.insert(elem1, 0, 50);
 volume_list.insert(elem2, 2, 7);
 volume_list.insert(elem3, 2, 9);
 volune_list.insert(elem4, 0, 5);
@@ -84,4 +84,23 @@ Position: [21, 71]
 Volume: 50
 ```
 
-#Remove
+### Remove
+The **remove** function allows to remove an element from the list with its **index**, **it works like a classic remove**.
+
+***Exemple***
+```cc
+auto elem1 = std::string("Bye you :c");
+auto elem2 = std::string("Hi there !");
+    
+volume_list.append(elem1, 10);
+volune_list.append(elem2, 20);
+volume_list.remove(0);
+```
+
+**List status** *(std::cout << volume_list)*:
+```
+-------[0]-------
+Element: Hi there !
+Position: [10, 30]
+Volume: 20
+```
