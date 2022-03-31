@@ -135,12 +135,20 @@ size_t get_current_volume() const;
 size_t get_element_number() const;
 size_t get_remaining_volume() const;
 bool get_is_dynamic_size() const;
-const std::vector<VolumeWrapper<T>>& get_volume_list() const;
 
 std::vector<VolumeWrapper<T>>::const_iterator begin() const;
 std::vector<VolumeWrapper<T>>::iterator begin();
 std::vector<VolumeWrapper<T>>::const_iterator end() const;
 std::vector<VolumeWrapper<T>>::iterator end();
+```
+## Essential Methods -- VolumeWrapper ⭐
+
+```cc
+VolumeWrapper(std::shared_ptr<T> element, size_t min_position, size_t volume);
+T& get_element() const;
+size_t get_min_position() const;
+size_t get_max_position() const;
+size_t get_volume() const;
 ```
 
 ## Compatibility with STL functions -- WORK IN PROGRESS 👨‍💻
