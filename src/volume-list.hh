@@ -25,7 +25,7 @@ public:
     size_t get_current_volume() const;
     size_t get_element_number() const;
     size_t get_remaining_volume() const;
-    bool get_is_dynamic_size();
+    bool get_is_dynamic_size() const;
 
 
     std::vector<VolumeWrapper<T>>::const_iterator begin() const;
@@ -39,6 +39,7 @@ private:
     void elements_shift(VolumeWrapper<T>& element);
     void check_resize(size_t volume);
     void check_out_of_range(size_t min_position);
+    void check_negative_volume(size_t volume);
 
 private:
     size_t max_volume_;

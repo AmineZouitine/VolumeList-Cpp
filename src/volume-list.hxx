@@ -35,7 +35,7 @@ inline size_t VolumeList<T>::get_element_number() const
 }
 
 template <typename T>
-inline bool VolumeList<T>::get_is_dynamic_size()
+inline bool VolumeList<T>::get_is_dynamic_size() const
 {
     return is_dynamic_size_;
 }
@@ -70,9 +70,17 @@ inline void VolumeList<T>::check_out_of_range(size_t min_position)
     }
 }
 
+template <typename T>
+void VolumeList<T>::check_negative_volume(size_t volume)
+{
+    if (volume < 0)
+        throw std::invalid_argument("Negative volume is invalid");
+}
+
 template<typename T>
 inline void VolumeList<T>::append(T& element, size_t volume)
 {
+    check_negative_volume(volume);
     check_resize(volume);
 
     auto last_min_position = get_element_number() > 0
@@ -128,8 +136,10 @@ inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 template<typename T>
 inline void VolumeList<T>::insert(T& element, size_t min_position, size_t volume)
 {
+    check_negative_volume(volume);
     check_out_of_range(min_position);
     check_resize(volume);
+
     auto new_elem = VolumeWrapper<T>(std::make_shared<T>(element), min_position, volume);
     elements_shift(new_elem);
     current_volume_ += volume;
