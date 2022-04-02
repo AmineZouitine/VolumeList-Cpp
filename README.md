@@ -4,7 +4,18 @@
   <img src="https://user-images.githubusercontent.com/53370597/160875178-bfe364e0-2aa9-42e6-950d-c69c6b6ddc5f.png">
 </p>
 
+<br>
 
+- [What this is](#what-this-is)
+- [Installation -- WORK IN PROGRESS 👨‍💻](#installation)
+- [Usage](#usage)
+  - [Essential methods](#essential-methods)
+  - [Creation](#creation)
+  - [Append](#append)
+  - [Insert](#insert)
+  - [Remove](#remove)
+
+## What this is
 This project allows to add a notion of **volume** in contiguous containers in memory. 
 An interesting example of use would be a timetable application.
 
