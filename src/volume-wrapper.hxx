@@ -33,11 +33,6 @@ inline size_t VolumeWrapper<T>::get_volume() const
     return volume_;
 }
 
-template<typename T>
-bool VolumeWrapper<T>::operator==(const VolumeWrapper<T>& rhs)
-{
-    return min_position_ == rhs.get_min_position();
-}
 
 template<typename T>
 void VolumeWrapper<T>::set_min_position(size_t new_min_position)
@@ -52,7 +47,6 @@ bool VolumeWrapper<T>::is_overlaping(const VolumeWrapper<T>& rhs)
         && get_max_position() > rhs.get_min_position();
 }
 
-
 template<typename T>
 std::ostream& operator<<(std::ostream& os, VolumeWrapper<T>& wrapper)
 {
@@ -65,7 +59,38 @@ std::ostream& operator<<(std::ostream& os, VolumeWrapper<T>& wrapper)
 }
 
 template<typename T>
+bool VolumeWrapper<T>::operator!=(const VolumeWrapper<T> &rhs)
+{
+    return get_min_position() != rhs.get_min_position();
+}
+
+template<typename T>
+bool VolumeWrapper<T>::operator==(const VolumeWrapper<T>& rhs)
+{
+    return min_position_ == rhs.get_min_position();
+}
+
+template<typename T>
 bool VolumeWrapper<T>::operator<(const VolumeWrapper<T> &rhs)
 {
     return get_min_position() < rhs.get_min_position();
 }
+
+template<typename T>
+bool VolumeWrapper<T>::operator<=(const VolumeWrapper<T> &rhs)
+{
+    return get_min_position() <= rhs.get_min_position();
+}
+
+template<typename T>
+bool VolumeWrapper<T>::operator>=(const VolumeWrapper<T> &rhs)
+{
+    return get_min_position() >= rhs.get_min_position();
+}
+
+template<typename T>
+bool VolumeWrapper<T>::operator>(const VolumeWrapper<T> &rhs)
+{
+    return get_min_position() > rhs.get_min_position();
+}
+
