@@ -109,16 +109,6 @@ inline VolumeWrapper<T>& VolumeList<T>::get_volume_at(size_t index)
 }
 
 template<typename T>
-inline void VolumeList<T>::sort()
-{
-    std::sort(elements_.begin(), elements_.end(),
-        [](const VolumeWrapper<T> &lhs, const VolumeWrapper<T> &rhs)
-        {
-            return lhs.get_min_position() < rhs.get_min_position();
-        });
-}
-
-template<typename T>
 inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
 {
     elements_.push_back(element);
