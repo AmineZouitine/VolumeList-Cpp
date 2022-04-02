@@ -130,7 +130,7 @@ inline void VolumeList<T>::elements_shift(VolumeWrapper<T>& element)
             element = elements_[i];
         }
     }
-    sort();
+    std::sort(elements_.begin(), elements_.end());
 }
 
 template<typename T>

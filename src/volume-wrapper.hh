@@ -17,6 +17,7 @@ public:
     void set_min_position(size_t new_min_position);
     
     bool operator==(const VolumeWrapper<T>& rhs);
+    bool operator<(const VolumeWrapper<T>& rhs);
     bool is_overlaping(const VolumeWrapper<T>& rhs);
 
 private:

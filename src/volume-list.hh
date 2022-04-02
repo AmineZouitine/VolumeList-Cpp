@@ -33,9 +33,7 @@ public:
     std::vector<VolumeWrapper<T>>::const_iterator end() const;
     std::vector<VolumeWrapper<T>>::iterator end();
 
-
 private:
-    void sort();
     void elements_shift(VolumeWrapper<T>& element);
     void check_resize(size_t volume);
     void check_out_of_range(size_t min_position);

@@ -63,3 +63,9 @@ std::ostream& operator<<(std::ostream& os, VolumeWrapper<T>& wrapper)
     
     return os;
 }
+
+template<typename T>
+bool VolumeWrapper<T>::operator<(const VolumeWrapper<T> &rhs)
+{
+    return get_min_position() < rhs.get_min_position();
+}
