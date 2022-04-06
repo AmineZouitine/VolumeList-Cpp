@@ -8,8 +8,6 @@
 This project allows to add a notion of **volume** in contiguous containers in memory. 
 An interesting example of use would be a timetable application.
 
-## Installation -- WORK IN PROGRESS 👨‍💻
-
 
 ## Usage 📜
 
@@ -151,5 +149,4 @@ size_t get_max_position() const;
 size_t get_volume() const;
 ```
 
-## Compatibility with STL functions -- WORK IN PROGRESS 👨‍💻
 ## Code documentation -- WORK IN PROGRESS 👨‍💻
